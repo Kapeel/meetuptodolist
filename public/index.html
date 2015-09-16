@@ -13,8 +13,8 @@
   <body ng-app="todoApp">
     <div class="container" ng-controller="todosController">
 
-      <input ng-model="name">
-      <button class="btn btn-primary">Add</button>
+      <input ng-model="todo.name">
+      <button class="btn btn-primary" ng-click="addTodo()">Add</button>
       <button class="btn btn-warning">Update</button>
       <button class="btn btn-danger">Cancel</button>
 

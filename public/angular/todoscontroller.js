@@ -5,4 +5,12 @@ todoApp.controller('todosController', ['$scope', '$http', function ($scope, $htt
   $http.get('/todos').success(function(response){
     $scope.todos = response
   })
+  // ADD TODO 
+  $scope.addTodo = function(){
+    $http.post('/todo', $scope.todo).success(function(response){
+      $scope.todos.push(response);
+      $scope.todo.name = '';
+    });
+  };
+  
 }])
