@@ -15,13 +15,13 @@
 
       <input ng-model="todo.name">
       <button class="btn btn-primary" ng-click="addTodo()">Add</button>
-      <button class="btn btn-warning">Update</button>
+      <button class="btn btn-info">Update</button>
       <button class="btn btn-danger">Cancel</button>
 
       <div ng-repeat="todo in todos">
         <p>{{todo.name}}</p>
         <button class="btn btn-danger" ng-click="deleteTodo(todo._id)" >Delete</button>
-        <button class="btn btn-warning">Edit</button>
+        <button class="btn btn-warning" ng-click="edit(todo)" >Edit</button>
       </div>
 
     </div>
