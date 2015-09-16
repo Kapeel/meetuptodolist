@@ -29,4 +29,13 @@ todoApp.controller('todosController', ['$scope', '$http', function ($scope, $htt
   $scope.edit = function(todo){
     $scope.todo = todo;
   };
+  // UPDATE TODO
+  $scope.update = function () {
+    var id =  $scope.todo._id;
+    $http.put('/todo/'+id, $scope.todo).success(function(response){
+      getTodos()
+    });
+    $scope.todo = '';
+  };
+
 }])

@@ -15,8 +15,7 @@
 
       <input ng-model="todo.name">
       <button class="btn btn-primary" ng-click="addTodo()">Add</button>
-      <button class="btn btn-info">Update</button>
-      <button class="btn btn-danger">Cancel</button>
+      <button class="btn btn-info"ng-click="update()">Update</button>
 
       <div ng-repeat="todo in todos">
         <p>{{todo.name}}</p>
