@@ -4,5 +4,5 @@ var todoApp = angular.module('todoApp', []);
 todoApp.controller('todosController', ['$scope', '$http', function ($scope, $http){
   
   $scope.todos = [{name: "clean house"}, {name: "do laundry"},{name: "attend Javascript meetup"}]
-  
+
 }])
