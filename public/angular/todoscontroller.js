@@ -18,11 +18,15 @@ todoApp.controller('todosController', ['$scope', '$http', function ($scope, $htt
       $scope.todo.name = '';
     });
   };
-  
+
   // DELETE TODO
   $scope.deleteTodo = function (id){
     $http.delete('/todo/'+id).success(function (response){  
       getTodos()
     })
   }
+ // EDIT TODO
+  $scope.edit = function(todo){
+    $scope.todo = todo;
+  };
 }])
