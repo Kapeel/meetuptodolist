@@ -25,6 +25,27 @@ app.get('/todos', function (req, res){
     res.json(docs); 
   })
 })
+// POST TODO ROUTE
+app.post('/todo', function (req, res){
+  console.log(req.body)
+  var newTodo = new Todo(req.body);
+  newTodo.save(function (err, doc){
+    if (err) console.error(err);
+    if (doc){
+      res.json(doc)}
+  })
+})
+// DELETE ROUTE
+app.delete('/todo/:id', function (req, res){
+  var todo = Todo.where({_id: req.params.id});
+  todo.findOneAndRemove(function (err, doc){
+    if (err) console.error (err)
+    if (doc) {
+      res.json(doc)
+    };
+  });
+  
+});
 // ROUTES END
 
 
