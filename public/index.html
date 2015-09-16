@@ -20,7 +20,7 @@
 
       <div ng-repeat="todo in todos">
         <p>{{todo.name}}</p>
-        <button class="btn btn-danger">Delete</button>
+        <button class="btn btn-danger" ng-click="deleteTodo(todo._id)" >Delete</button>
         <button class="btn btn-warning">Edit</button>
       </div>
 

@@ -2,9 +2,15 @@
 var todoApp = angular.module('todoApp', []);
 
 todoApp.controller('todosController', ['$scope', '$http', function ($scope, $http){
-  $http.get('/todos').success(function(response){
-    $scope.todos = response
-  })
+
+  // GET TODOS
+  function getTodos(){
+    $http.get('/todos').success(function(response){
+      $scope.todos = response
+    })
+  }
+  getTodos()
+
   // ADD TODO 
   $scope.addTodo = function(){
     $http.post('/todo', $scope.todo).success(function(response){
@@ -13,4 +19,10 @@ todoApp.controller('todosController', ['$scope', '$http', function ($scope, $htt
     });
   };
   
+  // DELETE TODO
+  $scope.deleteTodo = function (id){
+    $http.delete('/todo/'+id).success(function (response){  
+      getTodos()
+    })
+  }
 }])
